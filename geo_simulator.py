@@ -1,6 +1,5 @@
 import numpy as np
 import time
-import datetime
 import MySQLdb as sql
 from time_converter import get_current_time
 
@@ -20,6 +19,6 @@ def GeoSimulator(n_objects, xlim, ylim, velocity, timesleep):
                            [(i + 1, np.round(points[i, 0], 6), np.round(points[i, 1], 6), current_time) for i in range(n_objects)])
         time.sleep(timesleep)
 
-GeoSimulator(10, (-10, 10), (-20, 20), 1, 10)
+GeoSimulator(50, (-200, 200), (-100, 100), 10, 0.1)
 
 conn.close()
